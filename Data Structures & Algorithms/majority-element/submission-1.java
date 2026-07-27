@@ -1,0 +1,20 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        int n=nums.length;
+        Arrays.sort(nums);
+        int c=1;
+        for(int i=1;i<n;i++){
+            if(nums[i]==nums[i-1]){
+                c++;
+                if(c>n/2){
+                    return nums[i];
+                }
+            }
+            else{
+                c=1;
+            }
+        }
+        return nums[0];
+        
+    }
+}
